@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            cursor: url('cursor.gif'), auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASCII Art Generator</h1>
+    <form action="/ascii-art" method="post">
+        <div id="animated-background"></div>
+        <div>
+            <label for="text-input">Text:</label>
+            <textarea name="text-input" class="form-control" id="text-input" rows="10" placeholder="Input your text:" required></textarea>
+        </div>
+        <div>
+            <label for="banner-select">Banner:</label>
+            <select id="banner-select" name="banner-select">
+                <option selected value="shadow">Shadow</option>
+                <option selected value="standard">Standard</option>
+                <option selected value="thinkertoy">Thinkertoy</option>
+            </select>
+        </div>
+        <button type="submit">Generate ASCII Art</button>
+    </form>
+    <div id="result"><pre>{{.}}</pre></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
